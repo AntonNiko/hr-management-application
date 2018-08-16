@@ -1,0 +1,45 @@
+﻿@model IEnumerable<hr_management_application.Models.Salary>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalaryValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OvertimeValid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyOvertimeHourStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeeklyOvertimeHourStart)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalaryValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OvertimeValid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DailyOvertimeHourStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeeklyOvertimeHourStart)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

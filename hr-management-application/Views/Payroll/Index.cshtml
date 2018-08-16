@@ -1,0 +1,51 @@
+﻿@model IEnumerable<hr_management_application.Models.Payroll>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransitNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndFormDelivery)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransitNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndFormDelivery)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
